@@ -3,7 +3,7 @@ test ! -d cons/con && mkdir cons/con;
 test ! -d cons/bypass && mkdir cons/bypass;
 apps=`cat apps.txt`
 
-for app in $apps:
+for app in $apps;
 do
     isEnter="1";
     test -d $app && isEnter="0";  
