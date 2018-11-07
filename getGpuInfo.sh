@@ -5,16 +5,15 @@ apps=`cat apps.txt`
 
 for app in $apps:
 do
-    cd $app;
-    isEnter=$?;
-    
+    isEnter="1";
+    test -d $app && isEnter="0";  
     if [ $isEnter == "0" ];then
+        cd $app;
         cp con.txt ../cons/con/con_$app.txt;
         cp bypass_stat.txt ../cons/bypass/bypass_$app.txt;
         cd ..;
     else
-        echo "fail to enter";
+        echo "fail to enter @$app@";
     fi
-    
 done
 
